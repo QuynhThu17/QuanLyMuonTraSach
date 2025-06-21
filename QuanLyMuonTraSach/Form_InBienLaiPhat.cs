@@ -26,29 +26,21 @@ namespace QuanLyMuonTraSach
         {
             try
             {
-                if (string.IsNullOrEmpty(maPhieuMuon) || string.IsNullOrEmpty(maDocGia))
+                if (string.IsNullOrEmpty(maPhieuMuon))
                 {
-                    MessageBox.Show("Mã phiếu mượn hoặc mã độc giả không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mã phiếu mượn không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
                     return;
                 }
 
-                // Tạo report
+                // Khởi tạo báo cáo
                 BienLaiPhat rpt = new BienLaiPhat();
 
-                // Thiết lập Record Selection Formula để lọc dữ liệu trực tiếp trên report
-                string filter = $"{{LichSuMuonSach.MaPhieuMuon}} = '{maPhieuMuon}' AND {{LichSuMuonSach.MaDocGia}} = '{maDocGia}'";
-                if (!string.IsNullOrEmpty(maSach))
-                {
-                    filter += $" AND {{LichSuMuonSach.MaSach}} = '{maSach}'";
-                }
-
+                // Thiết lập điều kiện lọc
+                string filter = $"{{LichSuMuonSach.MaPhieuMuon}} = '{maPhieuMuon}'";
                 rpt.RecordSelectionFormula = filter;
 
-                // (Nếu cần có thể set lại kết nối database nếu chạy ở máy khác)
-                // rpt.SetDatabaseLogon("username", "password", "server", "database");
-
-                // Gán report cho viewer
+                // Gán báo cáo cho viewer
                 crystalReportViewer1.ReportSource = rpt;
                 crystalReportViewer1.Refresh();
             }
