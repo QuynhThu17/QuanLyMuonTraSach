@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLogicLayer;
+using QuanLyMuonTraSach.BLL;
 
 namespace QuanLyMuonTraSach
 {
@@ -20,6 +21,8 @@ namespace QuanLyMuonTraSach
         DocGia_BLL docGiaBLL = new DocGia_BLL();
         NhanVien_BLL nhanVienBLL = new NhanVien_BLL();
         ChiTietMTS_BLL chiTietMTS_BLL = new ChiTietMTS_BLL();
+        private InThongKe_BLL thongKeBLL = new InThongKe_BLL();
+
         public Form_ThongKe()
         {
             InitializeComponent();
@@ -52,16 +55,37 @@ namespace QuanLyMuonTraSach
 
             int tongSachDangMuon = chiTietMTS_BLL.TongSoSachDangMuon();
             lblSachMuon.Text = tongSachDangMuon.ToString();
+
+            // Thiết lập ngày mặc định cho bộ lọc
+            dtpDenNgay7.Value = DateTime.Now;
+            dtpTuNgay7.Value = DateTime.Now.AddMonths(-1);
+        
         }
 
-        private void TkSach_Click(object sender, EventArgs e)
-        {
+     
 
+        private void btnXem1_Click(object sender, EventArgs e)
+        {
+            Form_InThongKeSach frm = new Form_InThongKeSach();
+            frm.ShowDialog();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnXem7_Click(object sender, EventArgs e)
         {
+            DateTime tuNgay = dtpTuNgay7.Value.Date;
+            DateTime denNgay = dtpDenNgay7.Value.Date;
 
+            Form_InThongKeSoLuongSachDuocMuon frm = new Form_InThongKeSoLuongSachDuocMuon(tuNgay, denNgay);
+            frm.ShowDialog();
+        }
+
+        private void btnXem5_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dtpTuNgay7.Value.Date;
+            DateTime denNgay = dtpDenNgay7.Value.Date;
+
+            Form_InThongKeSoLuongSachDuocMuon frm = new Form_InThongKeSoLuongSachDuocMuon(tuNgay, denNgay);
+            frm.ShowDialog();
         }
     }
 }

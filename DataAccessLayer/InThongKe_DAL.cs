@@ -1,42 +1,26 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using DataAccessLayer;
 
 namespace QuanLyMuonTraSach.DAL
 {
     public class InThongKe_DAL
     {
-        private string ketnoi = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLTVMuonTraSach;Integrated Security=True";
+        private readonly ThaoTac_CoSoDuLieu ThaoTac = new ThaoTac_CoSoDuLieu();
 
-        public DataTable GetThongKeSoLuongSachDuocMuon(DateTime tuNgay, DateTime denNgay)
+        public DataTable LayBaoCaoThongKeMuonSach(DateTime tuNgay, DateTime denNgay)
         {
-            DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(ketnoi))
-            {
-                try
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("ThongKeSoLuongSachDuocMuon", conn))
-                    {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@TuNgay", tuNgay);
-                        cmd.Parameters.AddWithValue("@DenNgay", denNgay);
-                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                        {
-                            da.Fill(dt);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("Lỗi khi thực thi truy vấn: " + ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-            return dt;
+            string[] name = { "@TuNgay", "@DenNgay" };
+            object[] value = { tuNgay.Date, denNgay.Date };
+            return ThaoTac.SQL_LayDLCDK("sp_ThongKeSoLuongSachDuocMuon", name, value, 2);
+        }
+        public DataTable LayThongKeSach()
+        {
+            // Vì procedure này không có tham số
+            return ThaoTac.SQL_LayDLCDK("sp_ThongKeSoLuongSach", null, null, 0);
         }
     }
+
+
 }

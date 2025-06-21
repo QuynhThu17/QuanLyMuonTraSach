@@ -1,6 +1,6 @@
 ﻿namespace QuanLyMuonTraSach
 {
-    partial class Form_InThongKeSoLuongSachDuocMuon
+    partial class Form_InThongKeSach
     {
         /// <summary>
         /// Required designer variable.
@@ -39,18 +39,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1116, 619);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // Form_InThongKeSoLuongSachDuocMuon
+            // Form_InThongKeSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 619);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "Form_InThongKeSoLuongSachDuocMuon";
-            this.Text = "Form_InThongKeSoLuongSachDuocMuon";
-            this.Load += new System.EventHandler(this.Form_InThongKeSoLuongSachDuocMuon_Load);
+            this.Name = "Form_InThongKeSach";
+            this.Text = "Form_InThongKeSach";
+            this.Load += new System.EventHandler(this.Form_InThongKeSach_Load);
             this.ResumeLayout(false);
 
         }

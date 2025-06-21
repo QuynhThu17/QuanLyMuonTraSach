@@ -3,6 +3,8 @@ using System.Data;
 using BussinessLogicLayer;
 using System.Linq;
 using QuanLyMuonTraSach.DAL;
+using DataAccessLayer;
+using System.Windows.Forms;
 
 namespace QuanLyMuonTraSach.BLL
 {
@@ -15,6 +17,7 @@ namespace QuanLyMuonTraSach.BLL
         DocGia_BLL docGiaBLL = new DocGia_BLL();
         NhanVien_BLL nhanVienBLL = new NhanVien_BLL();
         ChiTietMTS_BLL chiTietMTS_BLL = new ChiTietMTS_BLL();
+        private InThongKe_DAL thongKeDAL = new InThongKe_DAL();
 
         public int TongSoSach()
         {
@@ -60,6 +63,17 @@ namespace QuanLyMuonTraSach.BLL
             int tongSoLuongDangMuon = dtChiTiet.AsEnumerable().Sum(r => r.Field<int>("SoLuong"));
             return tongSoLuongDangMuon;
         }
+
+        public DataTable LayBaoCaoThongKeMuonSach(DateTime tuNgay, DateTime denNgay)
+        {
+            return thongKeDAL.LayBaoCaoThongKeMuonSach(tuNgay, denNgay);
+        }
+        public DataTable LayThongKeSach()
+        {
+            return thongKeDAL.LayThongKeSach();
+        }
+
     }
+
 
 }

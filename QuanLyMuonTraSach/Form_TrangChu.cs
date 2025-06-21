@@ -88,6 +88,14 @@ namespace QuanLyMuonTraSach
             {
                 panelquanly1.Visible = false;
             }
+            if (panelthongke.Visible == true)
+            {
+                panelthongke.Visible = false;
+            }
+            if (paneldubao.Visible == true)
+            {
+                paneldubao.Visible = false;
+            }
             AdjustButtonPositions();
         }
 
@@ -122,13 +130,25 @@ namespace QuanLyMuonTraSach
             {
                 panelquanly1.Top = currentTop;
                 currentTop = panelquanly1.Bottom + spacing;
+            }          
+
+            btnThongKe.Top = currentTop;
+            currentTop = btnThongKe.Bottom + spacing;
+
+            if (panelthongke.Visible)
+            {
+                panelthongke.Top = currentTop;
+                currentTop = panelthongke.Bottom + spacing;
             }
 
             btnDuBao.Top = currentTop;
             currentTop = btnDuBao.Bottom + spacing;
 
-            btnThongKe.Top = currentTop;
-            currentTop = btnThongKe.Bottom + spacing;
+            if (paneldubao.Visible)
+            {
+                paneldubao.Top = currentTop;
+                currentTop = paneldubao.Bottom + spacing;
+            }
         }
 
         private void btnHeThong_Click(object sender, EventArgs e)
@@ -140,12 +160,13 @@ namespace QuanLyMuonTraSach
             labelGachCheo2.Visible = false;
             lblCon2.Visible = false;
         }
-        private void btnBaoCao_Click_1(object sender, EventArgs e)
+        private void btnDuBao_Click_1(object sender, EventArgs e) 
         {
             ActivateButton(sender, RGBColors.color3);
-            labelMenuContinue.Text = "Báo cáo";
+            ShowSubMenu(paneldubao);
+            labelMenuContinue.Text = "Dự báo";
             labelGachcheo.Visible = true;
-            panelquanly1.Visible = false;
+            panelthongke.Visible = false;
             panel_System.Visible = false;
             labelGachCheo2.Visible = false;
             lblCon2.Visible = false;
@@ -155,19 +176,10 @@ namespace QuanLyMuonTraSach
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color4);
+            ActivateButton(sender, RGBColors.color2);
+            ShowSubMenu(panelthongke);
             labelMenuContinue.Text = "Thống kê";
             labelGachcheo.Visible = true;
-
-            OpenChildForm3(new Form_ThongKe());
-            lblTitleChildForm.Text = "Trang chủ";
-            labelMenuContinue.Text = "Thống kê";
-            //lblCon2.Text = "Thống kê";
-
-            labelGachcheo.Visible = true;
-            labelGachCheo2.Visible = true;
-            lblCon2.Visible = true;
-            hideMenu();
         }
 
         private void btnHome_Click_Click(object sender, EventArgs e)
@@ -363,6 +375,69 @@ namespace QuanLyMuonTraSach
             hideMenu();
         }
 
-        
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm3(new Form_ThongKe());
+            lblTitleChildForm.Text = "Trang chủ";
+            labelMenuContinue.Text = "Thống kê";
+            lblCon2.Text = "Thống kê tổng hợp";
+
+            labelGachcheo.Visible = true;
+            labelGachCheo2.Visible = true;
+            lblCon2.Visible = true;
+            hideMenu();
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            OpenChildForm3(new Forrm_SachDuocMuonNhieuNhat());
+            lblTitleChildForm.Text = "Trang chủ";
+            labelMenuContinue.Text = "Thống kê";
+            lblCon2.Text = "Thống kê sách được mượn nhiều nhất";
+
+            labelGachcheo.Visible = true;
+            labelGachCheo2.Visible = true;
+            lblCon2.Visible = true;
+            hideMenu();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm3(new Form_DocGiaMuonNhieu_PieChart());
+            lblTitleChildForm.Text = "Trang chủ";
+            labelMenuContinue.Text = "Thống kê";
+            lblCon2.Text = "Thống kê độc giả mượn nhiều sách nhất";
+
+            labelGachcheo.Visible = true;
+            labelGachCheo2.Visible = true;
+            lblCon2.Visible = true;
+            hideMenu();
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm3(new Form_DuBaoXuHuongMuonSach());
+            lblTitleChildForm.Text = "Trang chủ";
+            labelMenuContinue.Text = "Dự báo";
+            lblCon2.Text = "Dự báo xu hướng mượn sách";
+
+            labelGachcheo.Visible = true;
+            labelGachCheo2.Visible = true;
+            lblCon2.Visible = true;
+            hideMenu();
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            OpenChildForm3(new Form_DuBaoHoanTra());
+            lblTitleChildForm.Text = "Trang chủ";
+            labelMenuContinue.Text = "Dự báo";
+            lblCon2.Text = "Tỷ lệ hoàn trả";
+
+            labelGachcheo.Visible = true;
+            labelGachCheo2.Visible = true;
+            lblCon2.Visible = true;
+            hideMenu();
+        }
     }
 }
