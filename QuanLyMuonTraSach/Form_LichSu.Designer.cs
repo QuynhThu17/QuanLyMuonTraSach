@@ -28,72 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvLichSu = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnPhucHoi = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.InBLP = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(489, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 27);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "LỊCH SỬ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(363, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(360, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HỆ THỐNG QUẢN LÝ THƯ VIỆN";
             // 
             // dgvLichSu
             // 
             this.dgvLichSu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLichSu.Location = new System.Drawing.Point(24, 98);
+            this.dgvLichSu.Location = new System.Drawing.Point(12, 12);
             this.dgvLichSu.Name = "dgvLichSu";
             this.dgvLichSu.RowHeadersWidth = 51;
             this.dgvLichSu.RowTemplate.Height = 24;
-            this.dgvLichSu.Size = new System.Drawing.Size(1626, 701);
+            this.dgvLichSu.Size = new System.Drawing.Size(1425, 672);
             this.dgvLichSu.TabIndex = 265;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkCyan;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 861);
+            this.panel2.Location = new System.Drawing.Point(0, 746);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1662, 12);
+            this.panel2.Size = new System.Drawing.Size(1437, 19);
             this.panel2.TabIndex = 261;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1662, 82);
-            this.panel1.TabIndex = 258;
             // 
             // btnPhucHoi
             // 
@@ -107,9 +69,9 @@
             this.btnPhucHoi.IconColor = System.Drawing.Color.White;
             this.btnPhucHoi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPhucHoi.IconSize = 30;
-            this.btnPhucHoi.Location = new System.Drawing.Point(987, 805);
+            this.btnPhucHoi.Location = new System.Drawing.Point(970, 690);
             this.btnPhucHoi.Name = "btnPhucHoi";
-            this.btnPhucHoi.Size = new System.Drawing.Size(202, 51);
+            this.btnPhucHoi.Size = new System.Drawing.Size(145, 51);
             this.btnPhucHoi.TabIndex = 283;
             this.btnPhucHoi.Text = "Khôi phục ";
             this.btnPhucHoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -128,9 +90,9 @@
             this.btnXoa.IconColor = System.Drawing.Color.White;
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 30;
-            this.btnXoa.Location = new System.Drawing.Point(1319, 805);
+            this.btnXoa.Location = new System.Drawing.Point(1284, 690);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(202, 51);
+            this.btnXoa.Size = new System.Drawing.Size(84, 51);
             this.btnXoa.TabIndex = 284;
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -149,9 +111,9 @@
             this.InBLP.IconColor = System.Drawing.Color.White;
             this.InBLP.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.InBLP.IconSize = 30;
-            this.InBLP.Location = new System.Drawing.Point(689, 805);
+            this.InBLP.Location = new System.Drawing.Point(1169, 690);
             this.InBLP.Name = "InBLP";
-            this.InBLP.Size = new System.Drawing.Size(202, 51);
+            this.InBLP.Size = new System.Drawing.Size(77, 51);
             this.InBLP.TabIndex = 285;
             this.InBLP.Text = "In ";
             this.InBLP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -162,30 +124,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1662, 873);
+            this.ClientSize = new System.Drawing.Size(1437, 765);
             this.Controls.Add(this.InBLP);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnPhucHoi);
             this.Controls.Add(this.dgvLichSu);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "Form_LichSu";
             this.Text = "FormLichSu";
             this.Load += new System.EventHandler(this.FormLichSu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvLichSu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnPhucHoi;
         private FontAwesome.Sharp.IconButton btnXoa;
         private FontAwesome.Sharp.IconButton InBLP;

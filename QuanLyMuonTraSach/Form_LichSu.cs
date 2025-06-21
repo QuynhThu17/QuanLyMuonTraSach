@@ -47,6 +47,8 @@ namespace QuanLyMuonTraSach
                     dgvLichSu.DataSource = null;
                 }
             }
+            dgvLichSu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLichSu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         }
 
         private string GetMaDocGiaFromDangNhap(string taiKhoan)
@@ -174,10 +176,17 @@ namespace QuanLyMuonTraSach
             }
 
             DataGridViewRow row = dgvLichSu.SelectedRows[0];
-            string maLichSu = row.Cells["MaLichSu"].Value.ToString();
+            string maPhieuMuon = row.Cells["MaPhieuMuon"].Value?.ToString();
+            string maDocGia = row.Cells["MaDocGia"].Value?.ToString();
+            string maSach = row.Cells["MaSach"].Value?.ToString();
 
-            // Tạo và hiển thị InBLP với ShowDialog
-            Form_InBienLaiPhat frm = new Form_InBienLaiPhat(maLichSu);
+            if (string.IsNullOrEmpty(maPhieuMuon) || string.IsNullOrEmpty(maDocGia))
+            {
+                MessageBox.Show("Mã phiếu mượn hoặc mã độc giả không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Form_InBienLaiPhat frm = new Form_InBienLaiPhat(maPhieuMuon, maDocGia, maSach);
             frm.ShowDialog();
         }
     }

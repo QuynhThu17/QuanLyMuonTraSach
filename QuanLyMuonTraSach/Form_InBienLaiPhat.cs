@@ -1,55 +1,62 @@
 ﻿using System;
-using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
-using BussinessLogicLayer;
 using System.Data;
+using System.Linq;
+using System.Windows.Forms;
+using BussinessLogicLayer;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace QuanLyMuonTraSach
 {
     public partial class Form_InBienLaiPhat : Form
     {
-        private BienLaiPhat_BLL phatBusinessLogic = new BienLaiPhat_BLL();
-        private string _maLichSu;
+        private BienLaiPhat_BLL bienLaiPhatBusinessLogic = new BienLaiPhat_BLL();
+        private string maPhieuMuon;
+        private string maDocGia;
+        private string maSach; // Lọc theo sách cụ thể
 
-        public Form_InBienLaiPhat()
+        public Form_InBienLaiPhat(string maPhieuMuon, string maDocGia, string maSach = null)
         {
             InitializeComponent();
+            this.maPhieuMuon = maPhieuMuon;
+            this.maDocGia = maDocGia;
+            this.maSach = maSach;
         }
 
-        public Form_InBienLaiPhat(string maLichSu)
-        {
-            InitializeComponent();
-            _maLichSu = maLichSu;
-        }
-
-        private void InBLP_Load(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(_maLichSu))
-            {
-                LoadReport();
-            }
-        }
-
-        private void LoadReport()
+        private void Form_InBienLaiPhat_Load(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(_maLichSu))
+                if (string.IsNullOrEmpty(maPhieuMuon) || string.IsNullOrEmpty(maDocGia))
                 {
-                    MessageBox.Show("Mã phiếu mượn không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mã phiếu mượn hoặc mã độc giả không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
                     return;
                 }
-                DataTable dt = phatBusinessLogic.GetPhatData(_maLichSu);
+
+                // Tạo report
                 BienLaiPhat rpt = new BienLaiPhat();
-                rpt.SetDataSource(dt);
+
+                // Thiết lập Record Selection Formula để lọc dữ liệu trực tiếp trên report
+                string filter = $"{{LichSuMuonSach.MaPhieuMuon}} = '{maPhieuMuon}' AND {{LichSuMuonSach.MaDocGia}} = '{maDocGia}'";
+                if (!string.IsNullOrEmpty(maSach))
+                {
+                    filter += $" AND {{LichSuMuonSach.MaSach}} = '{maSach}'";
+                }
+
+                rpt.RecordSelectionFormula = filter;
+
+                // (Nếu cần có thể set lại kết nối database nếu chạy ở máy khác)
+                // rpt.SetDatabaseLogon("username", "password", "server", "database");
+
+                // Gán report cho viewer
                 crystalReportViewer1.ReportSource = rpt;
-                // Ngăn chặn sự kiện Load gọi lại
-                this.Load -= InBLP_Load; // Loại bỏ sự kiện Load sau khi chạy lần đầu
+                crystalReportViewer1.Refresh();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải báo cáo: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

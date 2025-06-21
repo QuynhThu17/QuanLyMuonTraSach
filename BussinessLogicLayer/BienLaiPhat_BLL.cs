@@ -6,17 +6,20 @@ namespace BussinessLogicLayer
 {
     public class BienLaiPhat_BLL
     {
-        private BienLaiPhat_DAL phatDataAccess = new BienLaiPhat_DAL(); // Phải là BienLaiPhat_DAL
+        private readonly BienLaiPhat_DAL dal = new BienLaiPhat_DAL();
 
-        public DataTable GetPhatData(string MaPhieuMuon)
+        public DataTable GetBienLaiPhatData(string maPhieuMuon, string maDocGia, string maSach = null)
         {
             try
             {
-                return phatDataAccess.GetPhatData(MaPhieuMuon);
+                if (string.IsNullOrEmpty(maPhieuMuon) || string.IsNullOrEmpty(maDocGia))
+                    throw new ArgumentException("Mã phiếu mượn hoặc mã độc giả không được để trống!");
+
+                return dal.GetBienLaiPhatFromDB(maPhieuMuon, maDocGia, maSach);
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi trong logic kinh doanh: " + ex.Message);
+                throw new Exception($"Lỗi xử lý nghiệp vụ tại {DateTime.Now:dd/MM/yyyy HH:mm}: {ex.Message}");
             }
         }
     }

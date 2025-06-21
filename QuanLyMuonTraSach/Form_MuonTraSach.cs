@@ -37,6 +37,9 @@ namespace QuanLyMuonTraSach
             // Tải danh sách phiếu mượn
             dgvMuonTraSach1.DataSource = MuonTraSachBLL.MuonTraSach_Select();
             dgvChiTietMuonTraSach1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMuonTraSach1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMuonTraSach1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
 
             // Ẩn cột mã trong dgvMuonTraSach1
             dgvMuonTraSach1.Columns["MaDocGia"].Visible = false;
@@ -287,16 +290,10 @@ namespace QuanLyMuonTraSach
                 int soLuongTra = (int)nubSoLuong.Value;
                 string ghiChu = txtGhiChu.Text;
                 string maSach = cbbSach.SelectedValue.ToString();
-                DateTime ngayTraThucTe = DateTime.Now;
+                DateTime ngayTraThucTe = DateTime.Now; // Sử dụng ngày hiện tại để tính toán
 
-                // Lấy ngày hạn trả (ưu tiên ngày gia hạn nếu có)
-                DataTable dtPM = MuonTraSachBLL.MuonTraSach_Select();
-                var pmRow = dtPM.AsEnumerable().FirstOrDefault(r => r["MaPhieuMuon"].ToString() == maPM);
-                DateTime hanTra = ngayTra; // mặc định
-
-                if (pmRow != null && pmRow["NgayGiaHan"] != DBNull.Value)
-                    hanTra = Convert.ToDateTime(pmRow["NgayGiaHan"]);
-
+                // Sử dụng ngayTra làm ngày hạn trả cố định
+                DateTime hanTra = ngayTra;
                 int soNgayTre = (ngayTraThucTe - hanTra).Days;
                 int tongTienPhat = 0;
 
@@ -354,8 +351,8 @@ namespace QuanLyMuonTraSach
                 else
                 {
                     // Trả một phần → cập nhật lại số lượng còn
-                    int soLuongCon = soLuongHienTai - soLuongTra;
-                    ChiTietMuonTraSachBLL.ChiTietMuonTraSach_Update(maPM, maSach, soLuongCon);
+                    int soLuongConLai = soLuongHienTai - soLuongTra; // Sử dụng tên biến khác để tránh nhầm với cột
+                    ChiTietMuonTraSachBLL.ChiTietMuonTraSach_Update(maPM, maSach, soLuongConLai);
                 }
 
                 // Nếu không còn chi tiết nào thì xóa phiếu mượn
@@ -373,13 +370,13 @@ namespace QuanLyMuonTraSach
                 }
 
                 LoadAndResizeDataGridView(); // refresh lại lưới
-                ChiTietMuonTraSachBLL.CapNhatTraSach(maPM, maSach, soLuongTra, DateTime.Now);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
 
         private void SoLuongSauTra(string maSach, int soLuongTra)
         {
@@ -724,7 +721,7 @@ namespace QuanLyMuonTraSach
                 try
                 {
                     txbMPM.Text = txtMaPhieuMuon.Text;
-                    cbbSach.SelectedValue = dgvChiTietMuonTraSach1.Rows[e.RowIndex].Cells["TenSach"].Value.ToString();
+                    cbbSach.SelectedValue = dgvChiTietMuonTraSach1.Rows[e.RowIndex].Cells["MaSach"].Value.ToString();
                     nubSoLuong.Value = Convert.ToDecimal(dgvChiTietMuonTraSach1.Rows[e.RowIndex].Cells["SoLuong"].Value);
                 }
                 catch (Exception ex)

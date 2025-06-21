@@ -56,6 +56,7 @@
     <Compile Include="DangNhap_DAL.cs" />
     <Compile Include="DocGia_DAL.cs" />
     <Compile Include="InPM_DAL.cs" />
+    <Compile Include="InThongKe_DAL.cs" />
     <Compile Include="LichSuMuonSach_DAL.cs" />
     <Compile Include="LoaiSach_DAL.cs" />
     <Compile Include="MuonTraSach_DAL.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="TacGia_DAL.cs" />
     <Compile Include="TaiKhoan_DAL.cs" />
     <Compile Include="ThaoTac_CoSoDuLieu.cs" />
+    <Compile Include="ThongKe_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

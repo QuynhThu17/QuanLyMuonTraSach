@@ -60,6 +60,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_InThongKeSoLuongSachDuocMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InThongKeSoLuongSachDuocMuon.Designer.cs">
+      <DependentUpon>Form_InThongKeSoLuongSachDuocMuon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,15 @@
     <Compile Include="Form_ThongKe.Designer.cs">
       <DependentUpon>Form_ThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeSoLuongSachMuonTheoDocGia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThongKeSoLuongSachMuonTheoDocGia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Form_InThongKeSoLuongSachDuocMuon.resx">
+      <DependentUpon>Form_InThongKeSoLuongSachDuocMuon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_TrangChu.resx">
       <DependentUpon>Form_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +238,10 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="ThongKeSoLuongSachMuonTheoDocGia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ThongKeSoLuongSachMuonTheoDocGia.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

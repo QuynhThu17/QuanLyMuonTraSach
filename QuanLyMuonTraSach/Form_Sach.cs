@@ -23,6 +23,8 @@ namespace QuanLyMuonTraSach
         {
             InitializeComponent();
             dgvSACH.DataSource = SachBLL.Sach_Select();
+            dgvSACH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSACH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         }
 
         private void Sach_Load(object sender, EventArgs e)

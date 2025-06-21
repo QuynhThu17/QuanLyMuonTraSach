@@ -45,6 +45,12 @@ namespace BussinessLogicLayer
         {
             return ChiTietMuonTraSachDal.CapNhatTraSach(maPM, maSach, soLuongTra, ngayTraThucTe);
         }
+        public int TongSoSachDangMuon()
+        {
+            DataTable dt = ChiTietMuonTraSachDal.ChiTietMuonTraSach_Select();
+            int tongSoLuong = dt.AsEnumerable().Sum(row => row.Field<int>("SoLuong"));
+            return tongSoLuong;
+        }
 
     }
 }

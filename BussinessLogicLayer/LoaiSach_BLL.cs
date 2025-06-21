@@ -41,5 +41,10 @@ namespace BussinessLogicLayer
         {
             return LoaiSachdal.LoaiSach_select();
         }
+        public int TongSoLoaiSachHienCo()
+        {
+            DataTable dtLoaiSach = LoaiSachdal.LoaiSach_select();
+            return dtLoaiSach.Rows.Count;
+        }
     }
 }

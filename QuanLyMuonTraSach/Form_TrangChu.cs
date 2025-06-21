@@ -158,6 +158,16 @@ namespace QuanLyMuonTraSach
             ActivateButton(sender, RGBColors.color4);
             labelMenuContinue.Text = "Thống kê";
             labelGachcheo.Visible = true;
+
+            OpenChildForm3(new Form_ThongKe());
+            lblTitleChildForm.Text = "Trang chủ";
+            labelMenuContinue.Text = "Thống kê";
+            //lblCon2.Text = "Thống kê";
+
+            labelGachcheo.Visible = true;
+            labelGachCheo2.Visible = true;
+            lblCon2.Visible = true;
+            hideMenu();
         }
 
         private void btnHome_Click_Click(object sender, EventArgs e)
@@ -353,24 +363,6 @@ namespace QuanLyMuonTraSach
             hideMenu();
         }
 
-        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelGachcheo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelGachCheo2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
