@@ -1,6 +1,6 @@
 ﻿namespace QuanLyMuonTraSach
 {
-    partial class Form_InBienLaiPhat
+    partial class Form_InThongKeSoLuongSachDuocMuon
     {
         /// <summary>
         /// Required designer variable.
@@ -39,18 +39,17 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1182, 741);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1116, 619);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // Form_InBienLaiPhat
+            // Form_InThongKeSoLuongSachDuocMuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 741);
+            this.ClientSize = new System.Drawing.Size(1116, 619);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "Form_InBienLaiPhat";
-            this.Text = "InBLP";
-            this.Load += new System.EventHandler(this.Form_InBienLaiPhat_Load);
+            this.Name = "Form_InThongKeSoLuongSachDuocMuon";
+            this.Text = "Form_InThongKeSoLuongSachDuocMuon";
             this.ResumeLayout(false);
 
         }

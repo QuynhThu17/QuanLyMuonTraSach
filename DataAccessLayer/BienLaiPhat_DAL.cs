@@ -6,56 +6,40 @@ namespace DataAccessLayer
 {
     public class BienLaiPhat_DAL
     {
-        private string ketnoi = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLTVMuonTraSach;Integrated Security=True";
+        private string connectionString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLTVMuonTraSach;Integrated Security=True";
 
-        public DataTable GetPhatData(string MaPhieuMuon)
+        public DataTable GetBienLaiPhatFromDB(string maPhieuMuon, string maDocGia, string maSach = null)
         {
-            using (SqlConnection cn = new SqlConnection(ketnoi))
+            DataTable dt = new DataTable();
+
+            using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 try
                 {
                     cn.Open();
-                    string SQL = @"
-                        SELECT 
-                            mts.MaPhieuMuon,
-                            dg.HoTenDocGia AS TenDocGia,
-                            dg.DiaChi,
-                            dg.NgaySinh,
-                            s.MaSach,
-                            s.TenSach,
-                            cts.SoLuong,
-                            mts.NgayTra,
-                            ls.NgayGhiNhan,
-                            CASE 
-                                WHEN ls.NgayGhiNhan > mts.NgayTra THEN 
-                                    cts.SoLuong * DATEDIFF(day, mts.NgayTra, ls.NgayGhiNhan) * 2000 
-                                ELSE 0 
-                            END AS TienPhat
-                        FROM MuonTraSach mts
-                        JOIN DocGia dg ON mts.MaDocGia = dg.MaDocGia
-                        JOIN ChiTietMuonTraSach cts ON mts.MaPhieuMuon = cts.MaPhieuMuon
-                        JOIN Sach s ON cts.MaSach = s.MaSach
-                        JOIN LichSuMuonSach ls ON mts.MaPhieuMuon = ls.MaPhieuMuon
-                        WHERE mts.MaPhieuMuon = @MaPhieuMuon";
-                    SqlDataAdapter da = new SqlDataAdapter(SQL, cn);
-                    da.SelectCommand.Parameters.AddWithValue("@MaPhieuMuon", MaPhieuMuon);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    if (dt.Rows.Count == 0)
+                    SqlCommand cmd = new SqlCommand("sp_InBienLaiPhat", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@MaPhieuMuon", maPhieuMuon);
+                    cmd.Parameters.AddWithValue("@MaDocGia", maDocGia ?? (object)DBNull.Value);
+                    if (!string.IsNullOrEmpty(maSach))
+                        cmd.Parameters.AddWithValue("@MaSach", maSach);
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
-                        throw new Exception("Không tìm thấy dữ liệu cho phiếu mượn: " + MaPhieuMuon);
+                        da.Fill(dt);
                     }
-                    return dt;
-                }
-                catch (SqlException ex)
-                {
-                    throw new Exception("Lỗi kết nối cơ sở dữ liệu: " + ex.Message);
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("Lỗi khi lấy dữ liệu: " + ex.Message);
+                    throw new Exception($"Lỗi truy cập dữ liệu tại {DateTime.Now:dd/MM/yyyy HH:mm}: {ex.Message}");
+                }
+                finally
+                {
+                    cn.Close();
                 }
             }
+
+            return dt;
         }
     }
 }

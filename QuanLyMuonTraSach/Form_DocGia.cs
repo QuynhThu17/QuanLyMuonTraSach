@@ -18,6 +18,8 @@ namespace QuanLyMuonTraSach
         {
             InitializeComponent();
             dgvDocGia.DataSource = DocGiaBLL.DocGia_Select();
+            dgvDocGia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDocGia.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         }
 
         private void btnTaoM_Click(object sender, EventArgs e)

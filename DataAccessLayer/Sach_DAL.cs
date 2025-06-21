@@ -78,6 +78,7 @@ namespace DataAccessLayer
 
             thaotac.SQL_Thuchien(tenProc, parameterNames, parameterValues, soLuongThamSo);
         }
+      
     }
 
 

@@ -19,6 +19,8 @@ namespace QuanLyMuonTraSach
         {
             InitializeComponent();
             dgvNhanVien.DataSource = NhanVienBLL.NhanVien_Select();
+            dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         }
 
         private void NhanVien_Load(object sender, EventArgs e)

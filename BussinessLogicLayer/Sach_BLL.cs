@@ -45,6 +45,12 @@ namespace BussinessLogicLayer
         {
             SachDal.Sach_UpdateSoLuong(maSach, soLuongMoi);
         }
+        public int TongSoSachHienCo()
+        {
+            DataTable dtSach = SachDal.Sach_Select();
+            int tongSoLuong = dtSach.AsEnumerable().Sum(row => row.Field<int>("SoLuong"));
+            return tongSoLuong;
+        }
     }
 
 

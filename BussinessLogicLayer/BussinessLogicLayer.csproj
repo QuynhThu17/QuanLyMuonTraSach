@@ -38,6 +38,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +57,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DocGia_BLL.cs" />
     <Compile Include="InPM_BLL.cs" />
+    <Compile Include="InThongKe_BLL.cs" />
     <Compile Include="LichSuMuonSach_BLL.cs" />
     <Compile Include="LoaiSach_BLL.cs" />
     <Compile Include="MuonTraSach_BLL.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TacGia_BLL.cs" />
     <Compile Include="TaiKhoan_BLL.cs" />
+    <Compile Include="ThongKe_BLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">

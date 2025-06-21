@@ -34,6 +34,8 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.btnDuBao = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.labelNameId = new System.Windows.Forms.Label();
+            this.labelIDDG = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.lablevaitro = new System.Windows.Forms.Label();
@@ -64,8 +66,6 @@
             this.btnHome_Click = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.labelIDDG = new System.Windows.Forms.Label();
-            this.labelNameId = new System.Windows.Forms.Label();
             this.panelShadow.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -92,7 +92,7 @@
             this.panelShadow.Location = new System.Drawing.Point(0, 117);
             this.panelShadow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1798, 10);
+            this.panelShadow.Size = new System.Drawing.Size(1464, 10);
             this.panelShadow.TabIndex = 19;
             // 
             // panelContainer
@@ -144,9 +144,30 @@
             this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1798, 117);
+            this.panelTitleBar.Size = new System.Drawing.Size(1464, 117);
             this.panelTitleBar.TabIndex = 18;
-            this.panelTitleBar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitleBar_Paint);
+            // 
+            // labelNameId
+            // 
+            this.labelNameId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNameId.AutoSize = true;
+            this.labelNameId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labelNameId.ForeColor = System.Drawing.Color.White;
+            this.labelNameId.Location = new System.Drawing.Point(1121, 95);
+            this.labelNameId.Name = "labelNameId";
+            this.labelNameId.Size = new System.Drawing.Size(0, 18);
+            this.labelNameId.TabIndex = 47;
+            // 
+            // labelIDDG
+            // 
+            this.labelIDDG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelIDDG.AutoSize = true;
+            this.labelIDDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labelIDDG.ForeColor = System.Drawing.Color.White;
+            this.labelIDDG.Location = new System.Drawing.Point(1211, 95);
+            this.labelIDDG.Name = "labelIDDG";
+            this.labelIDDG.Size = new System.Drawing.Size(0, 18);
+            this.labelIDDG.TabIndex = 46;
             // 
             // iconButton1
             // 
@@ -160,7 +181,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 40;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(1711, 58);
+            this.iconButton1.Location = new System.Drawing.Point(1377, 58);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(61, 55);
@@ -195,7 +216,7 @@
             this.lablevaitro.AutoSize = true;
             this.lablevaitro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.lablevaitro.ForeColor = System.Drawing.Color.White;
-            this.lablevaitro.Location = new System.Drawing.Point(1545, 64);
+            this.lablevaitro.Location = new System.Drawing.Point(1211, 64);
             this.lablevaitro.Name = "lablevaitro";
             this.lablevaitro.Size = new System.Drawing.Size(0, 18);
             this.lablevaitro.TabIndex = 43;
@@ -206,7 +227,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1473, 64);
+            this.label2.Location = new System.Drawing.Point(1121, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 18);
             this.label2.TabIndex = 42;
@@ -220,7 +241,7 @@
             this.panel1.Location = new System.Drawing.Point(393, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1798, 53);
+            this.panel1.Size = new System.Drawing.Size(1464, 53);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -244,7 +265,6 @@
             this.labelGachCheo2.Size = new System.Drawing.Size(12, 18);
             this.labelGachCheo2.TabIndex = 30;
             this.labelGachCheo2.Text = "/";
-            this.labelGachCheo2.Click += new System.EventHandler(this.labelGachCheo2_Click);
             // 
             // lblCon2
             // 
@@ -253,7 +273,7 @@
             this.lblCon2.ForeColor = System.Drawing.Color.White;
             this.lblCon2.Location = new System.Drawing.Point(319, 66);
             this.lblCon2.Name = "lblCon2";
-            this.lblCon2.Size = new System.Drawing.Size(0, 23);
+            this.lblCon2.Size = new System.Drawing.Size(0, 18);
             this.lblCon2.TabIndex = 29;
             // 
             // labelMenuContinue
@@ -276,7 +296,6 @@
             this.labelGachcheo.Size = new System.Drawing.Size(12, 18);
             this.labelGachcheo.TabIndex = 27;
             this.labelGachcheo.Text = "/";
-            this.labelGachcheo.Click += new System.EventHandler(this.labelGachcheo_Click);
             // 
             // lblTitleChildForm
             // 
@@ -285,7 +304,7 @@
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.White;
             this.lblTitleChildForm.Location = new System.Drawing.Point(99, 66);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(93, 23);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(74, 18);
             this.lblTitleChildForm.TabIndex = 22;
             this.lblTitleChildForm.Text = "Trang chủ";
             // 
@@ -299,7 +318,7 @@
             this.panelConFrom.Location = new System.Drawing.Point(355, 0);
             this.panelConFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelConFrom.Name = "panelConFrom";
-            this.panelConFrom.Size = new System.Drawing.Size(1798, 1238);
+            this.panelConFrom.Size = new System.Drawing.Size(1464, 952);
             this.panelConFrom.TabIndex = 111;
             // 
             // panel
@@ -310,14 +329,14 @@
             this.panel.Location = new System.Drawing.Point(0, 0);
             this.panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1798, 1238);
+            this.panel.Size = new System.Drawing.Size(1464, 952);
             this.panel.TabIndex = 20;
             // 
             // panelDesktop_01
             // 
-            this.panelDesktop_01.Location = new System.Drawing.Point(1, 124);
+            this.panelDesktop_01.Location = new System.Drawing.Point(3, 131);
             this.panelDesktop_01.Name = "panelDesktop_01";
-            this.panelDesktop_01.Size = new System.Drawing.Size(1865, 957);
+            this.panelDesktop_01.Size = new System.Drawing.Size(1455, 812);
             this.panelDesktop_01.TabIndex = 0;
             // 
             // btnHeThong
@@ -357,7 +376,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(355, 1238);
+            this.panelMenu.Size = new System.Drawing.Size(355, 952);
             this.panelMenu.TabIndex = 110;
             // 
             // btnQuanLy
@@ -611,40 +630,18 @@
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton4.UseVisualStyleBackColor = true;
             // 
-            // labelIDDG
-            // 
-            this.labelIDDG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelIDDG.AutoSize = true;
-            this.labelIDDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.labelIDDG.ForeColor = System.Drawing.Color.White;
-            this.labelIDDG.Location = new System.Drawing.Point(1545, 95);
-            this.labelIDDG.Name = "labelIDDG";
-            this.labelIDDG.Size = new System.Drawing.Size(0, 18);
-            this.labelIDDG.TabIndex = 46;
-            this.labelIDDG.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // labelNameId
-            // 
-            this.labelNameId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelNameId.AutoSize = true;
-            this.labelNameId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.labelNameId.ForeColor = System.Drawing.Color.White;
-            this.labelNameId.Location = new System.Drawing.Point(1473, 83);
-            this.labelNameId.Name = "labelNameId";
-            this.labelNameId.Size = new System.Drawing.Size(0, 18);
-            this.labelNameId.TabIndex = 47;
-            // 
             // Form_TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2153, 1238);
+            this.ClientSize = new System.Drawing.Size(1819, 952);
             this.Controls.Add(this.panelConFrom);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelHeThong);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_TrangChu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ ";
             this.Load += new System.EventHandler(this.TrangChu_Load);
             this.panelShadow.ResumeLayout(false);

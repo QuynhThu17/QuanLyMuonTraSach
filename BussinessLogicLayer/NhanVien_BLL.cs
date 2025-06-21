@@ -40,6 +40,11 @@ namespace BussinessLogicLayer
         {
             return NhanVienDal.NhanVien_Select();
         }
+        public int TongSoNhanVienHienCo()
+        {
+            DataTable dtLoaiSach = NhanVienDal.NhanVien_Select();
+            return dtLoaiSach.Rows.Count;
+        }
     }
 }
 

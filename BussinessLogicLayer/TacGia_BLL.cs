@@ -40,5 +40,10 @@ namespace BussinessLogicLayer
         {
             return TacGiaDal.TacGia_Select();
         }
+        public int TongSoTacGiaHienCo()
+        {
+            DataTable dtLoaiSach = TacGiaDal.TacGia_Select();
+            return dtLoaiSach.Rows.Count;
+        }
     }
 }

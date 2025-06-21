@@ -40,6 +40,12 @@ namespace BussinessLogicLayer
         {
             return DocGiaDal.DocGia_Select();
         }
+        public int TongSoDocGiaHienCo()
+        {
+            DataTable dtLoaiSach = DocGiaDal.DocGia_Select();
+            return dtLoaiSach.Rows.Count;
+        }
+
     }
 
 }

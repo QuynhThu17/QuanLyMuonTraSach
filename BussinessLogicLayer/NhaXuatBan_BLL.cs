@@ -40,5 +40,10 @@ namespace BussinessLogicLayer
         {
             return NhaXuatBanDal.NhaXuatBan_Select();
         }
+        public int TongSoNhaXuatBanHienCo()
+        {
+            DataTable dtLoaiSach = NhaXuatBanDal.NhaXuatBan_Select();
+            return dtLoaiSach.Rows.Count;
+        }
     }
 }
