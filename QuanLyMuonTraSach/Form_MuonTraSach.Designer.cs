@@ -58,7 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dgvMuonTraSach1 = new System.Windows.Forms.DataGridView();
             this.dgvChiTietMuonTraSach1 = new System.Windows.Forms.DataGridView();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnXoaPM1 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.btnGiaHan1 = new FontAwesome.Sharp.IconButton();
@@ -71,6 +71,7 @@
             this.TaoMoiPM = new FontAwesome.Sharp.IconButton();
             this.btnMuon = new FontAwesome.Sharp.IconButton();
             this.btnIn = new FontAwesome.Sharp.IconButton();
+            this.btnMuon2 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietMuonTraSach)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuonTraSach)).BeginInit();
@@ -171,7 +172,7 @@
             this.btnXoa.IconSize = 30;
             this.btnXoa.Location = new System.Drawing.Point(510, 196);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(157, 51);
+            this.btnXoa.Size = new System.Drawing.Size(140, 51);
             this.btnXoa.TabIndex = 266;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -192,7 +193,7 @@
             this.btnCN.IconSize = 30;
             this.btnCN.Location = new System.Drawing.Point(510, 121);
             this.btnCN.Name = "btnCN";
-            this.btnCN.Size = new System.Drawing.Size(157, 51);
+            this.btnCN.Size = new System.Drawing.Size(140, 51);
             this.btnCN.TabIndex = 265;
             this.btnCN.Text = "Cập nhật";
             this.btnCN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -214,7 +215,7 @@
             this.btnLuu.IconSize = 30;
             this.btnLuu.Location = new System.Drawing.Point(510, 38);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(157, 51);
+            this.btnLuu.Size = new System.Drawing.Size(140, 51);
             this.btnLuu.TabIndex = 264;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -454,26 +455,26 @@
             this.dgvChiTietMuonTraSach1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietMuonTraSach1_CellContentClick);
             this.dgvChiTietMuonTraSach1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvChiTietMuonTraSach1_CellFormatting);
             // 
-            // iconButton1
+            // btnXoaPM1
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButton1.BackColor = System.Drawing.Color.Teal;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(1039, 296);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(159, 51);
-            this.iconButton1.TabIndex = 281;
-            this.iconButton1.Text = "Xóa Phiếu Mượn";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.btnXoaPM_Click);
+            this.btnXoaPM1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoaPM1.BackColor = System.Drawing.Color.Teal;
+            this.btnXoaPM1.FlatAppearance.BorderSize = 0;
+            this.btnXoaPM1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaPM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnXoaPM1.ForeColor = System.Drawing.Color.White;
+            this.btnXoaPM1.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnXoaPM1.IconColor = System.Drawing.Color.White;
+            this.btnXoaPM1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoaPM1.IconSize = 30;
+            this.btnXoaPM1.Location = new System.Drawing.Point(1196, 296);
+            this.btnXoaPM1.Name = "btnXoaPM1";
+            this.btnXoaPM1.Size = new System.Drawing.Size(172, 51);
+            this.btnXoaPM1.TabIndex = 281;
+            this.btnXoaPM1.Text = "Xóa Phiếu Mượn";
+            this.btnXoaPM1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoaPM1.UseVisualStyleBackColor = false;
+            this.btnXoaPM1.Click += new System.EventHandler(this.btnXoaPM_Click);
             // 
             // iconButton6
             // 
@@ -527,7 +528,7 @@
             this.btnGiaHan1.IconColor = System.Drawing.Color.White;
             this.btnGiaHan1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGiaHan1.IconSize = 30;
-            this.btnGiaHan1.Location = new System.Drawing.Point(811, 296);
+            this.btnGiaHan1.Location = new System.Drawing.Point(959, 296);
             this.btnGiaHan1.Name = "btnGiaHan1";
             this.btnGiaHan1.Size = new System.Drawing.Size(159, 51);
             this.btnGiaHan1.TabIndex = 278;
@@ -548,7 +549,7 @@
             this.btnTra1.IconColor = System.Drawing.Color.White;
             this.btnTra1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTra1.IconSize = 30;
-            this.btnTra1.Location = new System.Drawing.Point(376, 296);
+            this.btnTra1.Location = new System.Drawing.Point(477, 296);
             this.btnTra1.Name = "btnTra1";
             this.btnTra1.Size = new System.Drawing.Size(140, 51);
             this.btnTra1.TabIndex = 277;
@@ -590,7 +591,7 @@
             this.TaoMoiPM1.IconColor = System.Drawing.Color.White;
             this.TaoMoiPM1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.TaoMoiPM1.IconSize = 30;
-            this.TaoMoiPM1.Location = new System.Drawing.Point(170, 296);
+            this.TaoMoiPM1.Location = new System.Drawing.Point(29, 296);
             this.TaoMoiPM1.Name = "TaoMoiPM1";
             this.TaoMoiPM1.Size = new System.Drawing.Size(141, 51);
             this.TaoMoiPM1.TabIndex = 275;
@@ -712,7 +713,7 @@
             this.btnIn.IconColor = System.Drawing.Color.White;
             this.btnIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnIn.IconSize = 30;
-            this.btnIn.Location = new System.Drawing.Point(588, 296);
+            this.btnIn.Location = new System.Drawing.Point(710, 296);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(140, 51);
             this.btnIn.TabIndex = 283;
@@ -721,13 +722,35 @@
             this.btnIn.UseVisualStyleBackColor = false;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
+            // btnMuon2
+            // 
+            this.btnMuon2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMuon2.BackColor = System.Drawing.Color.Teal;
+            this.btnMuon2.FlatAppearance.BorderSize = 0;
+            this.btnMuon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMuon2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnMuon2.ForeColor = System.Drawing.Color.White;
+            this.btnMuon2.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnMuon2.IconColor = System.Drawing.Color.White;
+            this.btnMuon2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMuon2.IconSize = 30;
+            this.btnMuon2.Location = new System.Drawing.Point(266, 296);
+            this.btnMuon2.Name = "btnMuon2";
+            this.btnMuon2.Size = new System.Drawing.Size(141, 51);
+            this.btnMuon2.TabIndex = 284;
+            this.btnMuon2.Text = "Mượn";
+            this.btnMuon2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMuon2.UseVisualStyleBackColor = false;
+            this.btnMuon2.Click += new System.EventHandler(this.btnMuon_Click);
+            // 
             // Form_MuonTraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1437, 765);
+            this.Controls.Add(this.btnMuon2);
             this.Controls.Add(this.btnIn);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnXoaPM1);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.btnGiaHan1);
@@ -803,7 +826,8 @@
         private FontAwesome.Sharp.IconButton btnGiaHan1;
         private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnXoaPM1;
         private FontAwesome.Sharp.IconButton btnIn;
+        private FontAwesome.Sharp.IconButton btnMuon2;
     }
 }

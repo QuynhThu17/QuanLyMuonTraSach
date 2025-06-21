@@ -90,9 +90,9 @@
             this.btnXoa.IconColor = System.Drawing.Color.White;
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 30;
-            this.btnXoa.Location = new System.Drawing.Point(1284, 690);
+            this.btnXoa.Location = new System.Drawing.Point(1252, 690);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(84, 51);
+            this.btnXoa.Size = new System.Drawing.Size(116, 51);
             this.btnXoa.TabIndex = 284;
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -111,9 +111,9 @@
             this.InBLP.IconColor = System.Drawing.Color.White;
             this.InBLP.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.InBLP.IconSize = 30;
-            this.InBLP.Location = new System.Drawing.Point(1169, 690);
+            this.InBLP.Location = new System.Drawing.Point(1121, 690);
             this.InBLP.Name = "InBLP";
-            this.InBLP.Size = new System.Drawing.Size(77, 51);
+            this.InBLP.Size = new System.Drawing.Size(125, 51);
             this.InBLP.TabIndex = 285;
             this.InBLP.Text = "In ";
             this.InBLP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

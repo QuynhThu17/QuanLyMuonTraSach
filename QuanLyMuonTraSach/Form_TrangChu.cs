@@ -287,7 +287,7 @@ namespace QuanLyMuonTraSach
 
         private void icbtnQLMTS_Click(object sender, EventArgs e)
         {
-            OpenChildForm3(new Form_MuonTraSach());
+            OpenChildForm3(new Form_MuonTraSach(loaiTaiKhoan));
             lblTitleChildForm.Text = "Trang chủ";
             labelMenuContinue.Text = "Quản lý";
             lblCon2.Text = "Quản lý mượn trả sách";
@@ -300,7 +300,7 @@ namespace QuanLyMuonTraSach
 
         private void icQLS_Click(object sender, EventArgs e)
         {
-            OpenChildForm3(new Form_Sach());
+            OpenChildForm3(new Form_Sach(loaiTaiKhoan));
             lblTitleChildForm.Text = "Trang chủ";
             labelMenuContinue.Text = "Quản lý";
             lblCon2.Text = "Quản lý sách";
@@ -339,7 +339,7 @@ namespace QuanLyMuonTraSach
 
         private void icbtnLichSu_Click(object sender, EventArgs e)
         {
-            OpenChildForm3(new Form_LichSu(new Form_MuonTraSach(), tenDangNhap, loaiTaiKhoan));
+            OpenChildForm3(new Form_LichSu(new Form_MuonTraSach(loaiTaiKhoan), tenDangNhap, loaiTaiKhoan));
             lblTitleChildForm.Text = "Trang chủ";
             labelMenuContinue.Text = "Quản lý";
             lblCon2.Text = "Lịch sử";

@@ -164,7 +164,7 @@
             this.labelIDDG.AutoSize = true;
             this.labelIDDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.labelIDDG.ForeColor = System.Drawing.Color.White;
-            this.labelIDDG.Location = new System.Drawing.Point(1211, 95);
+            this.labelIDDG.Location = new System.Drawing.Point(1234, 95);
             this.labelIDDG.Name = "labelIDDG";
             this.labelIDDG.Size = new System.Drawing.Size(0, 18);
             this.labelIDDG.TabIndex = 46;

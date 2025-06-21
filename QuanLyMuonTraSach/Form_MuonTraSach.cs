@@ -23,14 +23,18 @@ namespace QuanLyMuonTraSach
         private string tenDangNhap;
         private string loaiTaiKhoan;
 
-        public Form_MuonTraSach()
+        public Form_MuonTraSach(string loaTaiKhoan)
         {
             InitializeComponent();
+            loaiTaiKhoan = loaTaiKhoan;
             LoadAndResizeDataGridView();
             // Thêm sự kiện CellFormatting cho cả hai DataGridView
             dgvMuonTraSach1.CellFormatting += dgvMuonTraSach1_CellFormatting;
             dgvChiTietMuonTraSach1.CellFormatting += dgvChiTietMuonTraSach1_CellFormatting;
         }
+
+
+
 
         private void LoadAndResizeDataGridView()
         {
@@ -154,9 +158,9 @@ namespace QuanLyMuonTraSach
                 foreach (DataRow row in dtChiTietMuonTra1.Rows)
                 {
                     ChiTietMuonTraSachBLL.ChiTietMuonTraSach_Insert(
-                        row["Mã phiếu mượn"].ToString(),
-                        row["Tên sách"].ToString(),
-                        Convert.ToInt32(row["Số lượng"])
+                        row["MaPhieuMuon"].ToString(),
+                        row["MaSach"].ToString(),
+                        Convert.ToInt32(row["SoLuong"])
                     );
 
                     // Trừ số lượng kho
@@ -290,6 +294,7 @@ namespace QuanLyMuonTraSach
                 int soLuongTra = (int)nubSoLuong.Value;
                 string ghiChu = txtGhiChu.Text;
                 string maSach = cbbSach.SelectedValue.ToString();
+                DateTime ngayGhiNhan = DateTime.Now; // Ngày ghi nhận là ngày hiện tại
                 DateTime ngayTraThucTe = DateTime.Now; // Sử dụng ngày hiện tại để tính toán
 
                 // Sử dụng ngayTra làm ngày hạn trả cố định
@@ -340,7 +345,7 @@ namespace QuanLyMuonTraSach
 
                 // Ghi lịch sử (ghiChu đã có tiền phạt nếu có)
                 LichSuMuonSach_BLL lichSuBLL = new LichSuMuonSach_BLL();
-                lichSuBLL.ThemLichSu(maPM, maDG, maNV, ngayMuon, ngayTra, ghiChu, maSach, soLuongTra);
+                lichSuBLL.ThemLichSu(maPM, maDG, maNV, ngayMuon, ngayTra, ghiChu, maSach, soLuongTra,ngayGhiNhan);
 
                 // Cập nhật phiếu mượn còn lại
                 if (soLuongTra == soLuongHienTai)
@@ -389,9 +394,10 @@ namespace QuanLyMuonTraSach
                 SachBLL.Sach_UpdateSoLuong(maSach, soLuongMoi);
             }
         }
-
+        
         private void FormMTS_Load(object sender, EventArgs e)
         {
+           
             txbMPM.Enabled = false;
             txtMaPhieuMuon.Enabled = false;
             dgvChiTietMuonTraSach1.DataSource = null;
@@ -410,12 +416,34 @@ namespace QuanLyMuonTraSach
             cbbNhanVien.ValueMember = "MaNhanVien";
 
             dtChiTietMuonTra1 = new DataTable();
-            dtChiTietMuonTra1.Columns.Add("Mã phiếu mượn", typeof(string));
-            dtChiTietMuonTra1.Columns.Add("Tên Sách", typeof(string));
-            dtChiTietMuonTra1.Columns.Add("Số lượng", typeof(int));
+            dtChiTietMuonTra1.Columns.Add("MaPhieuMuon", typeof(string));
+            dtChiTietMuonTra1.Columns.Add("TenSach", typeof(string));
+            dtChiTietMuonTra1.Columns.Add("SoLuong", typeof(int));
 
             dgvChiTietMuonTraSach1.DataSource = dtChiTietMuonTra1;
             dgvMuonTraSach1.CellContentClick += dgvMuonTraSach1_CellContentClick;
+
+            if (loaiTaiKhoan == "admin")
+            {
+                // Admin được toàn quyền
+                return;
+            }
+            else if (loaiTaiKhoan == "student")
+            {
+                // Chỉ được gia hạn sách, khóa toàn bộ các nút còn lại
+                btnMuon2.Enabled = false;
+                btnLuu.Enabled = false;
+                btnXoa.Enabled = false;
+                btnCN.Enabled = false;
+                btnXoaPM.Enabled = false;
+                btnXoaPM1.Enabled = false;
+                btnTra1.Enabled = false;
+                TaoMoiPM1.Enabled = false;
+
+                // Có thể thêm ẩn luôn các nút nếu bạn muốn:
+                // btnMuon.Visible = false; // ví dụ
+            }
+
         }
 
         private void dgvMuonTraSach1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -441,7 +469,7 @@ namespace QuanLyMuonTraSach
 
                 txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
 
-                // Gán mã phiếu mượn cho combobox bên chi tiết
+                // Gán MaPhieuMuon cho combobox bên chi tiết
                 txbMPM.Text = txtMaPhieuMuon.Text;
 
                 // Load chi tiết phiếu mượn tương ứng

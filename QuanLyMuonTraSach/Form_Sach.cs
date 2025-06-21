@@ -19,12 +19,14 @@ namespace QuanLyMuonTraSach
         NhaXuatBan_BLL NXB = new NhaXuatBan_BLL();
         LoaiSach_BLL LS = new LoaiSach_BLL();
         TacGia_BLL TG = new TacGia_BLL();
-        public Form_Sach()
+        private string loaiTaiKhoan;
+        public Form_Sach(string loaiTaiKhoan)
         {
             InitializeComponent();
             dgvSACH.DataSource = SachBLL.Sach_Select();
             dgvSACH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSACH.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loaiTaiKhoan = loaiTaiKhoan;
         }
 
         private void Sach_Load(object sender, EventArgs e)
@@ -40,6 +42,24 @@ namespace QuanLyMuonTraSach
             cbbTacGia.DataSource = TG.LDLTG();
             cbbTacGia.DisplayMember = "TenTacGia";
             cbbTacGia.ValueMember = "MaTacGia";
+            if (loaiTaiKhoan == "admin")
+            {
+                // Admin được toàn quyền
+                return;
+            }
+            else if (loaiTaiKhoan == "student")
+            {
+                // Chỉ được gia hạn sách, khóa toàn bộ các nút còn lại
+               
+                btnLuuu.Enabled = false;
+                btnXoaN.Enabled = false;
+                btnCN.Enabled = false;
+               
+                btnTaoM.Enabled = false;
+
+                // Có thể thêm ẩn luôn các nút nếu bạn muốn:
+                // btnMuon.Visible = false; // ví dụ
+            }
 
         }
 

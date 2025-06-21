@@ -14,10 +14,10 @@ namespace DataAccessLayer
         string[] name = { };
         object[] value = { };
 
-        public int LichSu_Insert(string maPM, string maDG, string maNV, DateTime ngayMuon, DateTime ngayTra, string ghiChu, string maSach, int soLuong)
+        public int LichSu_Insert(string maPM, string maDG, string maNV, DateTime ngayMuon, DateTime ngayTra, string ghiChu, string maSach, int soLuong, DateTime ngayGhiNhan)
         {
-            name = new string[8];
-            value = new object[8];
+            name = new string[9];
+            value = new object[9];
 
             name[0] = "@MaPhieuMuon"; value[0] = maPM;
             name[1] = "@MaDocGia"; value[1] = maDG;
@@ -27,8 +27,9 @@ namespace DataAccessLayer
             name[5] = "@GhiChu"; value[5] = ghiChu;
             name[6] = "@MaSach"; value[6] = maSach;
             name[7] = "@SoLuong"; value[7] = soLuong;
+            name[8] = "@NgayGhiNhan"; value[8] = ngayGhiNhan;
 
-            return thaotac.SQL_Thuchien("LichSuMuonSach_Insert", name, value, 8);
+            return thaotac.SQL_Thuchien("LichSuMuonSach_Insert", name, value, 9);
         }
 
         public DataTable LichSu_SelectAll()

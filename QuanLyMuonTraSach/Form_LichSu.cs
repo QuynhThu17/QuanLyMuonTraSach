@@ -49,6 +49,23 @@ namespace QuanLyMuonTraSach
             }
             dgvLichSu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLichSu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+            if (loaiTaiKhoan == "admin")
+            {
+                // Admin được toàn quyền
+                return;
+            }
+            else if (loaiTaiKhoan == "student")
+            {
+                // Chỉ được gia hạn sách, khóa toàn bộ các nút còn lại
+                btnPhucHoi.Enabled = false;
+                InBLP.Enabled = false;
+                btnXoa.Enabled = false;
+                
+
+                // Có thể thêm ẩn luôn các nút nếu bạn muốn:
+                // btnMuon.Visible = false; // ví dụ
+            }
         }
 
         private string GetMaDocGiaFromDangNhap(string taiKhoan)

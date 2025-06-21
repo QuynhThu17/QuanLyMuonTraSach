@@ -32,11 +32,11 @@ namespace BussinessLogicLayer
             }
         }
 
-        public int ThemLichSu(string maPM, string maDG, string maNV, DateTime ngayMuon, DateTime ngayTra, string ghiChu, string maSach, int soLuong)
+        public int ThemLichSu(string maPM, string maDG, string maNV, DateTime ngayMuon, DateTime ngayTra, string ghiChu, string maSach, int soLuong, DateTime ngayGhiNhan)
         {
             try
             {
-                return lichSuDAL.LichSu_Insert(maPM, maDG, maNV, ngayMuon, ngayTra, ghiChu, maSach, soLuong);
+                return lichSuDAL.LichSu_Insert(maPM, maDG, maNV, ngayMuon, ngayTra, ghiChu, maSach, soLuong, ngayGhiNhan);
             }
             catch (Exception ex)
             {
