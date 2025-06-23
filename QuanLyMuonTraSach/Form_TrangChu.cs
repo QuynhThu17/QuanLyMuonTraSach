@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using FontAwesome.Sharp;
 
 namespace QuanLyMuonTraSach
@@ -234,6 +236,7 @@ namespace QuanLyMuonTraSach
                 lablevaitro.Text = "Thủ thư";
             }
             hideMenu();
+           
         }
 
         private void OpenChildForm3(Form childForm)
@@ -273,7 +276,7 @@ namespace QuanLyMuonTraSach
 
         private void btnDMK_Click(object sender, EventArgs e)
         {
-
+                      
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -438,6 +441,11 @@ namespace QuanLyMuonTraSach
             labelGachCheo2.Visible = true;
             lblCon2.Visible = true;
             hideMenu();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

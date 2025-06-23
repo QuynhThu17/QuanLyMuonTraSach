@@ -73,6 +73,36 @@ namespace QuanLyMuonTraSach.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Brown_and_Beige_Library_Literature_Books_Photo_Quotes_Facebook_Cover {
+            get {
+                object obj = ResourceManager.GetObject("Brown and Beige Library Literature Books Photo Quotes Facebook Cover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Brown_and_Beige_Library_Literature_Books_Photo_Quotes_Facebook_Cover__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Brown and Beige Library Literature Books Photo Quotes Facebook Cover (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Brown_and_Beige_Library_Literature_Books_Photo_Quotes_Facebook_Cover__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Brown and Beige Library Literature Books Photo Quotes Facebook Cover (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_graph_report_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-graph-report-48", resourceCulture);

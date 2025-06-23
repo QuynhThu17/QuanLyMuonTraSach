@@ -206,6 +206,9 @@
       <DependentUpon>ThongKeSoLuongSachMuonTheoDocGia.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <None Include="Resources\Brown and Beige Library Literature Books Photo Quotes Facebook Cover %282%29.png" />
+    <None Include="Resources\Brown and Beige Library Literature Books Photo Quotes Facebook Cover %281%29.png" />
+    <None Include="Resources\Brown and Beige Library Literature Books Photo Quotes Facebook Cover.png" />
     <None Include="Resources\icons8-graph-report-48.png" />
     <EmbeddedResource Include="Form_DocGiaMuonNhieu_PieChart.resx">
       <DependentUpon>Form_DocGiaMuonNhieu_PieChart.cs</DependentUpon>
